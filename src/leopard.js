@@ -54,7 +54,7 @@
         return ajax && ajax(opts)
     }
 
-    var render = function(opts) {
+    /*var render = function(opts) {
         var template = opts.template,
             success = opts.success,
             error = opts.error
@@ -63,11 +63,11 @@
             var html = template && template(opts.data)
             html && (opts.element.innerHTML = html)
 
-            success && success.apply(this, arguments)
+            success && success()
         } catch (e) {
-            error && error.apply(this, arguments)
+            error && error(e)
         }
-    }
+    }*/
 
     var paramsRegxp = /([^=&]+)(=([^&#]*))?/g
     var getQuerystring = function() {
@@ -83,7 +83,6 @@
 
     var leopard = {
         ajax: proxy,
-        render: render,
         getQuerystring: getQuerystring
     }
 

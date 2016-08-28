@@ -7,33 +7,39 @@
 </head>
 <body>
 <style type="text/css">
-
 </style>
+    <div id="J_template"></div>
 <script type="text/javascript" src="../bower_components/ajax/dist/ajax.js"></script>
 <script type="text/javascript" src="../dist/leopard.min.js"></script>
 
 <script type="text/javascript">
 
-leopard.ajax({
-    id: "1",
-    url: "./data.json",
-    type:"get",
-    dataType:"json",
-    success : function(rs){
-        console.log(11,this,arguments)
-    },
-    error : function(e){
-        console.log(21,this,arguments)
-    }
-});
+setTimeout(function(){
 
+    console.log('ajax:1')
+
+    leopard.ajax({
+        id: "1",
+        url: "./data.json",
+        type:"get",
+        dataType:"json",
+        success : function(rs){
+            console.log(11,this,arguments)
+        },
+        error : function(e){
+            console.log(12,this,arguments)
+        }
+    });
+},500)
+
+console.log('ajax:2')
 leopard.ajax({
     id: "1",
     url: "./data.json",
     type:"get",
     dataType:"json",
     success : function(rs){
-        console.log(12,this,arguments)
+        console.log(21,this,arguments)
     },
     error : function(e){
         console.log(22,this,arguments)
@@ -41,11 +47,27 @@ leopard.ajax({
 });
 
 setTimeout(function(){
-    console.log('3')
+    console.log('ajax:3')
     leopard.ajax({
         id: "1",
         success : function(rs){
-            console.log(32,this,arguments)
+            console.log(31,this,arguments)
+
+            // leopard.render({
+            //     element:document.getElementById('J_template'),
+            //     data:rs,
+            //     template:function(data){
+            //         ///throw new Error('11');
+
+            //         return '<div>' +JSON.stringify(data)+ '</div>'
+            //     },
+            //     success:function(){
+            //         console.log('render success')
+            //     },
+            //     error : function(e){
+            //         console.log(e)
+            //     }
+            // })
         },
         error : function(e){
             console.log(32,this,arguments)
@@ -54,6 +76,7 @@ setTimeout(function(){
 },1000)
 
 console.log(leopard.getQuerystring())
+
 
 
 </script>
