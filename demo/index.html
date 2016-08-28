@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>Leopard</title>
+</head>
+<body>
+<style type="text/css">
+
+</style>
+<script type="text/javascript" src="../bower_components/ajax/dist/ajax.js"></script>
+<script type="text/javascript" src="../dist/leopard.min.js"></script>
+
+<script type="text/javascript">
+
+leopard.ajax({
+    id: "1",
+    url: "./data.json",
+    type:"get",
+    dataType:"json",
+    success : function(rs){
+        console.log(11,this,arguments)
+    },
+    error : function(e){
+        console.log(21,this,arguments)
+    }
+});
+
+leopard.ajax({
+    id: "1",
+    url: "./data.json",
+    type:"get",
+    dataType:"json",
+    success : function(rs){
+        console.log(12,this,arguments)
+    },
+    error : function(e){
+        console.log(22,this,arguments)
+    }
+});
+
+setTimeout(function(){
+    console.log('3')
+    leopard.ajax({
+        id: "1",
+        success : function(rs){
+            console.log(32,this,arguments)
+        },
+        error : function(e){
+            console.log(32,this,arguments)
+        }
+    });
+},1000)
+
+console.log(leopard.getQuerystring())
+
+
+</script>
+</body>
+</html>

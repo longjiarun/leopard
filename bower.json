@@ -1,0 +1,38 @@
+{
+  "name": "leopard",
+  "description": "leopard Library",
+  "main": "src/leopard.js",
+  "authors": [
+    "longjia <longjiarun@qq.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/longjiarun/leopard.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "leopard",
+    "ajax",
+    "ajax cache"
+  ],
+  "moduleType": [
+    "commonjs"
+  ],
+  "homepage": "",
+  "private": false,
+  "ignore": [
+    ".editorconfig",
+    ".gitignore",
+    ".npmignore",
+    "node_modules",
+    "bower_components",
+    "demo",
+    "build",
+    "test",
+    "server.js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "ajax": "https://github.com/longjiarun/ajax.git#^1.0.0"
+  }
+}
