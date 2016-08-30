@@ -10,16 +10,7 @@ var gulp = require('gulp'),
     pkg = require('./package.json')
 
 var getCdn = function(env){
-    switch(env){
-        case 0:
-            return '../../dist/' + pkg.name + '.js';
-        case 1:
-            return '//assets.daily.geilicdn.com/v-components/' + pkg.name + '/' +pkg.version+ '/index.js';
-        case 2:
-            return '//assets.pre.geilicdn.com/v-components/' + pkg.name + '/' +pkg.version+ '/index.js';
-        case 3:
-            return '//assets.geilicdn.com/v-components/' + pkg.name + '/' +pkg.version+ '/index.js';
-    }
+    return ''
 }
 
 var src = 'src',
