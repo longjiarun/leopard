@@ -33,6 +33,6 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "ajax": "https://github.com/longjiarun/ajax.git#^1.0.0"
+    "ajax": "https://github.com/longjiarun/ajax.git#^1.1.0"
   }
 }
